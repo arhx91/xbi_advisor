@@ -1,0 +1,64 @@
+# -------------------------
+# Python cache / bytecode
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+xbi_advisor/__pycache__
+
+# -------------------------
+# Virtual environments
+# -------------------------
+.venv/
+env/
+venv/
+
+# -------------------------
+# Build artifacts
+# -------------------------
+build/
+dist/
+*.egg-info/
+xbi_advisor.egg-info/
+profile_results.pstats
+
+# -------------------------
+# Local dev artifacts
+# -------------------------
+tmp/
+gcs/
+profile_results.pstats
+xbi_advisor/archive_pdf/
+
+# -------------------------
+# Environment & secrets
+# -------------------------
+.env
+xbi_advisor/.env
+
+# -------------------------
+# Git & IDE metadata
+# -------------------------
+.git
+.gitignore
+.DS_Store
+.idea/
+.vscode/
+
+# -------------------------
+# Docker-related
+# -------------------------
+.dockerignore
+
+# -------------------------
+# NodeJS / frontend (if any)
+# -------------------------
+node_modules/
+
+# -------------------------
+# Data files (if not needed in image)
+# -------------------------
+*.csv
+*.parquet
+*.db

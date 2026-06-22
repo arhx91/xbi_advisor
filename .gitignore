@@ -1,0 +1,105 @@
+# -------------------------
+# Python cache / bytecode
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------
+# macOS
+# -------------------------
+.DS_Store
+*.Zone.Identifier
+
+# -------------------------
+# Virtual environments
+# -------------------------
+.venv/
+env/
+venv/
+myenv/
+
+# -------------------------
+# IDE / Editor settings
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# Databricks-specific
+# -------------------------
+.databricks/
+
+# -------------------------
+# User-specific config
+# -------------------------
+.user.yml
+user_input.yaml
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+
+# -------------------------
+# dbt artifacts
+# -------------------------
+dbt_packages/
+target/
+
+# -------------------------
+# Local dev / temp
+# -------------------------
+tmp/
+gcs/
+build/
+dist/
+local_gcs/reports/
+
+# -------------------------
+# Environment files
+# -------------------------
+.env
+xbi_advisor/.env
+cloud_function/keys/
+
+# -------------------------
+# Python packaging artifacts
+# -------------------------
+*.egg-info/
+xbi_advisor.egg-info/
+build/lib/
+
+# -------------------------
+# Profiling / performance
+# -------------------------
+profile_results.pstats
+
+# -------------------------
+# Data files (ignore unless intentionally committed)
+# -------------------------
+*.csv
+*.parquet
+*.db
+xbi_advisor/final_recommendation/
+
+# -------------------------
+# Test/manual Typeform responses
+# -------------------------
+xbi_advisor/typeform_output/*.json
+
+# -------------------------
+# Internal documentation (not for public repo)
+# -------------------------
+TYPEFORM-QUESTIONS.md
+
+# -------------------------
+# Security - Google Cloud Keys
+# -------------------------
+xbi-advisor-test-*.json
+
+ # Tool caches
+  .ruff_cache/
+  .pytest_cache/

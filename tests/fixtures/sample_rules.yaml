@@ -1,0 +1,26 @@
+- id: no_data_ownership
+  path: data_governance.data_ownership
+  match: "no"
+  scores:
+    dimension_1: 1
+  recommendation: "Define clear data ownership to reduce governance risk."
+  description: "No data ownership defined indicates a governance gap."
+  semantic_similarity: false
+
+- id: low_data_literacy
+  path: maturity_level.data_literacy
+  match: "low"
+  scores:
+    dimension_1: 2
+  recommendation: "Invest in data literacy training for your organisation."
+  description: "Low data literacy limits effective BI adoption."
+  semantic_similarity: false
+
+- id: infrequent_bi_usage
+  path: maturity_level.bi_usage
+  match: "we rarely use BI tools"
+  scores:
+    dimension_1: 1
+  recommendation: "Establish structured BI adoption practices."
+  description: "Infrequent BI usage indicates low maturity."
+  semantic_similarity: true

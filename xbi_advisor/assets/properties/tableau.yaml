@@ -1,0 +1,66 @@
+bi_tools:
+  - name: "Tableau"
+    pros:
+      - "Best-in-class visualization capabilities"
+      - "Highly intuitive drag-and-drop interface"
+      - "Strong data exploration features"
+      - "Robust community and learning resources"
+      - "Handles large and complex datasets well"
+    cons:
+      - "Higher cost compared to competitors"
+      - "Steeper learning curve for advanced features"
+      - "More resource-intensive"
+      - "Data preparation capabilities less integrated"
+    price:
+      user_licenses: "High (User-based pricing with low flexibility)"
+      data_usage_cost: "Not explicitly detailed"
+    security:
+      access_controls:
+        row_level_security: true
+        field_level_security: true
+        role_based_permissions: true
+      compliance_certifications:
+        - "GDPR"
+    tool_maturity: "High (leader in data visualization with Salesforce ecosystem)"
+    data_governance:
+      centralized_semantic_layer: true
+      data_dictionary: true
+      metadata_management: true
+      data_lineage: true
+      audit_capabilities:
+        usage_tracking: true
+        change_history: true
+        access_logs: true
+    data_quality_monitoring_alerting:
+      validation:
+        rules_required: true
+        schema_enforcement: true
+      monitoring:
+        dashboards: true
+        automated_alerts: true
+      profiling:
+        data_statistics: true
+        anomaly_detection: true
+      freshness_monitoring: true
+    implementation_deployment:
+      embedded_analytics: true
+      on_prem_or_not: ["Cloud", "Server", "Desktop"]
+    serving_consumption:
+      automated_reports: true
+      export_formats: ["PDF", "PowerPoint", "Image formats", "CSV", "Excel"]
+    visualization:
+      out_of_the_box_features:
+        [
+          "Show Me intelligent visualization recommendations",
+          "VizQL technology for rapid visualization",
+          "Set actions and parameter actions",
+          "Advanced geographic mapping and spatial analysis",
+          "Level of detail (LOD) expressions",
+          "Data storytelling with story points",
+          "Viz animations",
+        ]
+      custom_visuals: "High"
+    workflow_management:
+      approvals: false
+      versioning: "Medium (Git integration available)"
+      environments: "Medium (Site/project-based environment separation, Content Migration Tool, dev/staging/prod server environments)"

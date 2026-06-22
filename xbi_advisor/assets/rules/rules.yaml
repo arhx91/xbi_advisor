@@ -1,0 +1,454 @@
+# Are you already using a BI tool? If so, which one?
+- id: current_bi_tool_powerbi
+  path: ecosystem.current_bi_tool
+  match: "Power BI"
+  scores:
+    Power_BI: 5
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Already invested in Power BI ecosystem with existing reports, training, and workflows
+  category: ecosystem
+  semantic_similarity: false
+
+- id: current_bi_tool_tableau
+  path: ecosystem.current_bi_tool
+  match: "Tableau"
+  scores:
+    Power_BI: 0
+    Tableau: 5
+    Looker: 0
+  recommendation: Tableau
+  description: Already invested in Tableau ecosystem with existing reports, training, and workflows
+  category: ecosystem
+  semantic_similarity: false
+
+- id: current_bi_tool_looker
+  path: ecosystem.current_bi_tool
+  match: "Looker"
+  scores:
+    Power_BI: 0
+    Tableau: 0
+    Looker: 5
+  recommendation: Looker
+  description: Already invested in Looker ecosystem with existing reports, training, and workflows
+  category: ecosystem
+  semantic_similarity: false
+
+# What cloud platform(s) or other tools is your organization currently using?
+- id: cloud_platform_azure
+  path: ecosystem.platform
+  match: "Microsoft Azure"
+  scores:
+    Power_BI: 4
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Azure ecosystem provides seamless integration with Power BI for data sources, security, and deployment
+  category: ecosystem
+  semantic_similarity: false
+
+- id: cloud_platform_google
+  path: ecosystem.platform
+  match: "Google Cloud Platform (GCP)"
+  scores:
+    Power_BI: 0
+    Tableau: 0
+    Looker: 4
+  recommendation: Looker
+  description: GCP provides native integration with Looker and strong BigQuery connectivity
+  category: ecosystem
+  semantic_similarity: false
+
+- id: cloud_platform_aws
+  path: ecosystem.platform
+  match: "Amazon Web Services (AWS)"
+  scores:
+    Power_BI: 0
+    Tableau: 4
+    Looker: 0
+  recommendation: Tableau
+  description: AWS works well with all tools, with Tableau having particularly strong partnership and services
+  category: ecosystem
+  semantic_similarity: false
+
+# Are you actively migrating to a new system/platform, or are you exploring a potential migration?
+# migration_actively_migrating and migration_exploring are commented out.
+# Migration intent alone does not favour any specific tool — equal scores
+# add noise without signal. Tool fit is determined by other rules.
+#
+# - id: migration_actively_migrating
+#   path: ecosystem.migration
+#   match: "Yes, we are actively migrating"
+#   scores:
+#     Power_BI: 2
+#     Tableau: 2
+#     Looker: 2
+#   recommendation: All tools
+#   description: Active migration is an opportunity to adopt a modern BI platform; the right choice depends on the broader context
+#   category: ecosystem
+#   semantic_similarity: false
+#
+# - id: migration_exploring
+#   path: ecosystem.migration
+#   match: "Yes, we are exploring a potential migration"
+#   scores:
+#     Power_BI: 1
+#     Tableau: 1
+#     Looker: 1
+#   recommendation: All tools
+#   description: Exploring migration signals openness to change; the best fit depends on cloud platform, governance needs, and team maturity
+#   category: ecosystem
+#   semantic_similarity: false
+
+# Do you require row-level security (RLS) to control data visibility by user role, team, or region?
+- id: row_level_security_essential
+  path: security.row_level_security
+  match: "Yes, RLS is essential for our BI setup"
+  scores:
+    Power_BI: 2
+    Tableau: 1
+    Looker: 4
+  recommendation: Looker
+  description: Looker offers the most robust and flexible row-level security implementation
+  category: security
+  semantic_similarity: false
+
+# Do you require centralized data governance—including shared metrics, access control, and a semantic model reused across teams?
+- id: centralized_governance_required
+  path: data_governance.centralized_governance
+  match: "Yes, centralized governance is a must"
+  scores:
+    Power_BI: 2
+    Tableau: 1
+    Looker: 4
+  recommendation: Looker
+  description: Looker's LookML semantic model provides unmatched centralized governance and metric consistency
+  category: governance
+  semantic_similarity: false
+
+# Do you need to be able to track changes made in your development workflow (version control)?
+- id: version_control_essential
+  path: data_governance.version_control
+  match: "Yes, these features are essential for our team"
+  scores:
+    Power_BI: 3
+    Tableau: 3
+    Looker: 4
+  recommendation: Looker
+  description: Looker is the only major BI tool with native Git-based version control for analytics code. Power BI and Tableau are both good alternatives.
+  category: governance
+  semantic_similarity: false
+
+# How would you describe your team's data literacy?
+- id: maturity_expert_literacy
+  path: maturity_level.data_literacy
+  match: "Expert: Team members are proficient in data analysis, modeling, and interpretation, and can effectively communicate data-driven insights"
+  scores:
+    Power_BI: 1
+    Tableau: 2
+    Looker: 4
+  recommendation: Looker
+  description: Expert teams benefit from Looker's advanced governance and code-first approach
+  category: maturity
+  semantic_similarity: false
+
+- id: maturity_advanced_literacy
+  path: maturity_level.data_literacy
+  match: "Advanced: Team members are comfortable working with data, can perform basic analysis, and understand key statistical concepts"
+  scores:
+    Power_BI: 2
+    Tableau: 3
+    Looker: 2
+  recommendation: Tableau
+  description: Advanced teams can leverage Tableau's powerful visualization capabilities
+  category: maturity
+  semantic_similarity: false
+
+- id: maturity_intermediate_literacy
+  path: maturity_level.data_literacy
+  match: "Intermediate: Team members can access and use data with guidance but may need help with more complex analysis or interpretation"
+  scores:
+    Power_BI: 4
+    Tableau: 2
+    Looker: 1
+  recommendation: Power BI
+  description: Teams with intermediate skills benefit from Power BI's user-friendly interface
+  category: maturity
+  semantic_similarity: false
+
+- id: maturity_beginner_literacy
+  path: maturity_level.data_literacy
+  match: "Beginner: Team members have limited experience with data and require significant support to access, understand, and use data effectively"
+  scores:
+    Power_BI: 4
+    Tableau: 1
+    Looker: 0
+  recommendation: Power BI
+  description: Beginner teams need intuitive tools with extensive learning resources
+  category: maturity
+  semantic_similarity: false
+
+# Does your team include an Analytics Engineer?
+- id: maturity_has_engineers
+  path: maturity_level.team
+  match: "Yes, we have one or more Analytics Engineers in our team"
+  scores:
+    Power_BI: 1
+    Tableau: 2
+    Looker: 3
+  recommendation: Looker
+  description: Teams with data/analytics engineers can leverage Looker's technical capabilities
+  category: maturity
+  semantic_similarity: false
+
+# To what extent are BI insights leveraged for business decisions?
+
+# How important is the cost associated with the BI tool for you?
+- id: cost_critically_important
+  path: pricing.user_licensing
+  match: "Critically important: Cost is a primary driver in the selection process; we have a strict budget"
+  scores:
+    Power_BI: 5
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Power BI offers the most cost-effective licensing, especially for Microsoft 365 users
+  category: pricing
+  semantic_similarity: false
+
+- id: cost_very_important
+  path: pricing.user_licensing
+  match: "Very important: Cost is a significant factor and heavily influences our decision"
+  scores:
+    Power_BI: 4
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Power BI provides significant cost savings over enterprise alternatives
+  category: pricing
+  semantic_similarity: false
+
+- id: cost_moderately_important
+  path: pricing.user_licensing
+  match: "Moderately important: Cost is considered, but it's balanced with features and other factors"
+  scores:
+    Power_BI: 3
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Power BI offers good value while other factors can still be considered
+  category: pricing
+  semantic_similarity: false
+
+# Which of the following monitoring capabilities do you currently have in place for your BI systems?
+- id: comprehensive_monitoring
+  path: maturity_level.monitoring
+  match: "We have comprehensive monitoring, logging, and alerting fully integrated"
+  scores:
+    Power_BI: 2
+    Tableau: 2
+    Looker: 3
+  recommendation: Looker
+  description: Advanced operational capabilities pair well with enterprise analytics platforms
+  category: operational
+  semantic_similarity: false
+
+# How much do you rely on writing code or expressions (e.g. DAX, LookML, SQL) versus using drag-and-drop features when building BI reports and dashboards?
+- id: maturity_code_first_prioritize
+  path: maturity_level.code_first_approach
+  match: "We write a lot of custom code - most of our BI work involves DAX, LookML, or SQL (>75%)"
+  scores:
+    Power_BI: 4
+    Tableau: 1
+    Looker: 4
+  recommendation: Looker
+  description: Code-first teams align perfectly with Looker's LookML and Git integration
+  category: maturity
+  semantic_similarity: false
+
+- id: maturity_balanced_code
+  path: maturity_level.code_first_approach
+  match: "We mix both - some reports are built with code, others with drag-and-drop (25–50%)"
+  scores:
+    Power_BI: 2
+    Tableau: 3
+    Looker: 2
+  recommendation: Tableau
+  description: Balanced approach works well with tools offering both flexibility and ease of use
+  category: maturity
+  semantic_similarity: false
+
+# Our BI tooling needs to be the best-in-class and able to create interactive and animated visualizations.
+- id: best_in_class_visuals_critical
+  path: maturity_level.visuals
+  match: "Critically important: Our business decisions depend on sophisticated interactive and animated visualizations"
+  scores:
+    Power_BI: 1
+    Tableau: 5
+    Looker: 0
+  recommendation: Tableau
+  description: Tableau provides unmatched interactive and animated visualization capabilities
+  category: capabilities
+  semantic_similarity: false
+
+- id: best_in_class_visuals_very_important
+  path: maturity_level.visuals
+  match: "Very important: Interactive visualizations are essential to our analytics strategy"
+  scores:
+    Power_BI: 1
+    Tableau: 4
+    Looker: 0
+  recommendation: Tableau
+  description: Interactive visualizations are essential and Tableau excels in this area
+  category: capabilities
+  semantic_similarity: false
+
+# Our BI tooling needs to be able to share dashboards and reports externally (e.g., with clients or partners).
+- id: external_sharing_all_reports
+  path: capabilities.external_delivery
+  match: "All or nearly all of our dashboards/reports need external sharing capabilities"
+  scores:
+    Power_BI: 2
+    Tableau: 3
+    Looker: 1
+  recommendation: Tableau
+  category: capabilities
+  description: Tableau provides strong external sharing options via Tableau Public and Tableau Online
+  semantic_similarity: false
+
+- id: external_sharing_most_reports
+  path: capabilities.external_delivery
+  match: "Most of our dashboards/reports need external sharing capabilities"
+  scores:
+    Power_BI: 0
+    Tableau: 2
+    Looker: 0
+  recommendation: Tableau
+  description: Tableau provides robust external sharing options via Tableau Public and Tableau Online
+  category: capabilities
+  semantic_similarity: false
+
+# Our BI tooling needs to automate delivery of reports via email or export them to formats like PDF or Excel.
+- id: report_delivery_all_reports
+  path: capabilities.report_delivery
+  match: "All or nearly all of our reports require automated delivery/export"
+  scores:
+    Power_BI: 4
+    Tableau: 2
+    Looker: 1
+  recommendation: Power BI
+  description: Power BI excels at report distribution, PDF exports, and external sharing capabilities
+  category: capabilities
+  semantic_similarity: false
+
+- id: report_delivery_most_reports
+  path: capabilities.report_delivery
+  match: "Most of our reports require automated delivery/export"
+  scores:
+    Power_BI: 3
+    Tableau: 2
+    Looker: 1
+  recommendation: Power BI
+  description: Power BI provides robust scheduled delivery and external sharing options
+  category: capabilities
+  semantic_similarity: false
+
+# What are some pain points you experience with your current BI setup?
+
+- id: pain_point_manual_reporting
+  path: capabilities.pain_points
+  match: "Manual reporting"
+  scores:
+    Power_BI: 1
+    Tableau: 1
+    Looker: 3
+  recommendation: Looker
+  description: Looker's semantic model eliminates manual reporting through governed, reusable analytics
+  category: pain_points
+  semantic_similarity: true
+
+- id: pain_point_data_inconsistency
+  path: capabilities.pain_points
+  match: "Data inconsistency"
+  scores:
+    Power_BI: 1
+    Tableau: 1
+    Looker: 3
+  recommendation: Looker
+  description: Looker's centralized semantic model ensures consistent metrics across all analyses
+  category: pain_points
+  semantic_similarity: true
+
+- id: pain_point_poor_performance
+  path: capabilities.pain_points
+  match: "Poor performance"
+  scores:
+    Power_BI: 2
+    Tableau: 4
+    Looker: 2
+  recommendation: Tableau
+  description: Tableau's in-memory engine and visualization performance are industry-leading
+  category: pain_points
+  semantic_similarity: true
+
+- id: pain_point_limited_visualizations
+  path: capabilities.pain_points
+  match: "Limited visualization options"
+  scores:
+    Power_BI: 2
+    Tableau: 4
+    Looker: 1
+  recommendation: Tableau
+  description: Tableau offers the most extensive and flexible visualization capabilities
+  category: pain_points
+  semantic_similarity: true
+
+- id: pain_point_security_issues
+  path: capabilities.pain_points
+  match: "Security issues"
+  scores:
+    Power_BI: 2
+    Tableau: 1
+    Looker: 3
+  recommendation: Looker
+  description: Looker provides enterprise-grade security and access controls
+  category: pain_points
+  semantic_similarity: true
+
+# What's most important in your BI tool selection?
+- id: advanced_visualizations_priority
+  path: capabilities.priority_features
+  match: "Advanced and flexible data visualizations"
+  scores:
+    Power_BI: 2
+    Tableau: 4
+    Looker: 1
+  recommendation: Tableau
+  description: Tableau leads the market in advanced visualization capabilities and visual analytics
+  category: capabilities
+  semantic_similarity: true
+
+- id: integration_with_microsoft_priority
+  path: capabilities.priority_features
+  match: "Integration with Microsoft tools"
+  scores:
+    Power_BI: 5
+    Tableau: 0
+    Looker: 0
+  recommendation: Power BI
+  description: Power BI provides seamless integration with entire Microsoft ecosystem
+  category: capabilities
+  semantic_similarity: true
+
+- id: strong_governance_priority
+  path: capabilities.priority_features
+  match: "Strong data governance and control"
+  scores:
+    Power_BI: 1
+    Tableau: 1
+    Looker: 4
+  recommendation: Looker
+  description: Looker's semantic layer and centralized governance make it ideal for data control
+  category: capabilities
+  semantic_similarity: true

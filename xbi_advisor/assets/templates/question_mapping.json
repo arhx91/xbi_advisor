@@ -1,0 +1,70 @@
+{
+  "What is your name?": ["user_info", "name"],
+  "What is your email address?": ["user_info", "email"],
+  "What is the name of your organization?": ["user_info", "organization_name"],
+  "Are you already using a BI tool? If so, which one?": [
+    "ecosystem",
+    "current_bi_tool"
+  ],
+  "What cloud platform(s) or other tools is your organization currently using?": [
+    "ecosystem",
+    "platform"
+  ],
+  "Are you actively migrating to a new system/platform, or are you exploring a potential migration?": [
+    "ecosystem",
+    "migration"
+  ],
+  "Do you require row-level security (RLS) to control data visibility by user role, team, or region?": [
+    "security",
+    "row_level_security"
+  ],
+  "Do you have centralized data governance—including shared metrics, access control, and a semantic model reused across teams?": [
+    "data_governance",
+    "centralized_governance"
+  ],
+  "Do you need to be able to track changes made in your development workflow (version control)?": [
+    "data_governance",
+    "version_control"
+  ],
+  "How would you describe your team’s data literacy?": [
+    "maturity_level",
+    "data_literacy"
+  ],
+  "Does your team include an Analytics Engineer?": ["maturity_level", "team"],
+  "To what extent are BI insights leveraged for business decisions?": [
+    "maturity_level",
+    "decision_making"
+  ],
+  "How important is the cost associated with the BI tool for you?": [
+    "pricing",
+    "user_licensing"
+  ],
+  "Which of the following monitoring capabilities do you currently have in place for your BI systems?": [
+    "maturity_level",
+    "monitoring"
+  ],
+  "How much do you rely on writing code or expressions (e.g. DAX, LookML, SQL) versus using drag-and-drop features when building BI reports and dashboards?": [
+    "maturity_level",
+    "code_first_approach"
+  ],
+  "Our BI tooling needs to be the best-in-class and be able to create interactive and animated visualizations.": [
+    "maturity_level",
+    "visuals"
+  ],
+  "Our BI tooling needs to be able to share dashboards and reports externally (e.g., with clients or partners).": [
+    "capabilities",
+    "external_delivery"
+  ],
+  "Our BI tooling needs to automate delivery of reports via email or export them to formats like PDF or Excel.": [
+    "capabilities",
+    "report_delivery"
+  ],
+  "What are some pain points you experience with your current BI setup?": [
+    "capabilities",
+    "pain_points"
+  ],
+  "What’s most important in your BI tool selection?": [
+    "capabilities",
+    "priority_features"
+  ]
+}

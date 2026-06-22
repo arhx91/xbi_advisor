@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker pull gcr.io/$PROJECT_ID/xbi-advisor || true
+        docker build \
+          --cache-from gcr.io/$PROJECT_ID/xbi-advisor \
+          -t gcr.io/$PROJECT_ID/xbi-advisor \
+          .
+images:
+  - gcr.io/$PROJECT_ID/xbi-advisor

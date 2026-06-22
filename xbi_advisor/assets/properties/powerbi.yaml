@@ -1,0 +1,138 @@
+bi_tools:
+  - name: "Power BI"
+
+    pros:
+      ecosystem_integration:
+        note: "Strong Microsoft ecosystem integration (Teams, Office, Azure Fabric)"
+      licensing_options:
+        note: "Wide range of licensing options from free to enterprise"
+      cost_effectiveness:
+        note: "Cost-effective compared to competitors"
+      scalability:
+        note: "Frequent data refresh and large model support at higher tiers"
+      ai_capabilities:
+        note: "Generative AI (Copilot) and automated insights improving productivity"
+      excel_familiarity:
+        note: "Low entry barrier for Excel users"
+      connectors:
+        note: "Extensive connector ecosystem"
+
+    cons:
+      licensing_complexity: |
+        Power BI's licensing model has multiple tiers with significant differences; choosing the right one requires understanding refresh limits, dataset size, sharing rules, and whether capacity/licenses cover all consumers.
+      embedded_cost:
+        note: "Power BI Embedded (A SKUs) and Microsoft Fabric capacities incur Azure costs and may be more expensive than per-user licensing for internal use."
+      dataset_size_limits:
+        note: |
+          Pro tier has a 1GB post-compression dataset limit; Premium/Capacity raises this substantially, but memory and performance constraints still apply for very large or high-complexity models.
+      refresh_and_scalability:
+        note: |
+          Import mode refresh frequencies vary by tier (8 vs 48 refreshes/day) and DirectQuery/live modes may have performance tradeoffs.
+      version_control:
+        note: "Native version control depends on Premium features (deployment pipelines) and requires processes/integration with Git."
+      price:
+        user_licensing: "Medium (User-based pricing with low flexibility)"
+        data_usage_cost: "Not explicitly detailed"
+
+    pricing:
+      license_tiers:
+        free:
+          supported: true
+          description: "Personal use/learning. Cannot share in team workspaces without capacity."
+          shareable: false
+        pro:
+          supported: true
+          description: "Per-user license with report sharing, subscriptions, and collaboration."
+          refresh_limit_per_day: 8
+          dataset_size_limit_gb: 1
+          cost_per_user_per_month: "approx €13 (may vary by region)" # December 2025
+        premium_per_user:
+          supported: true
+          description: "Per-user license unlocking most premium features without dedicated capacity."
+          refresh_limit_per_day: 48
+          dataset_size_limit_gb: "up to ~100"
+          advanced_features:
+            - "Paginated reports"
+            - "Deployment pipelines"
+            - "Premium AI capabilities"
+          cost_per_user_per_month: "approx €23" # December 2025
+        fabric_capacity:
+          supported: true
+          description: "Dedicated capacity via Microsoft Fabric capacities (F SKUs), enabling larger scale and viewer access without per-user licenses."
+          viewer_access_without_per_user_license: true
+          elastic_scaling: true
+          advanced_features:
+            - "Large model sizes"
+            - "High concurrency"
+            - "Enterprise governance"
+            - "AI integration"
+      cost_complexity_note: |
+        Costs and who needs what license depend heavily on workspace targeting (capacity vs shared), number of creators vs viewers, and embedding requirements. Shared workspaces on capacity can allow free users to view.
+
+    security:
+      access_controls:
+        row_level_security: true
+        field_level_security: true
+        role_based_permissions: true
+      identity: "Azure AD / Microsoft Entra"
+      encryption: "Encrypted at rest and in transit"
+      tool_maturity: "High (well-established with strong Microsoft ecosystem integration)"
+      compliance_certifications:
+        - "GDPR"
+
+    data_governance:
+      centralized_semantic_layer: true
+      data_dictionary: true
+      metadata_management: true
+      data_lineage: true
+      audit_capabilities:
+        usage_tracking: true
+        change_history: true
+        access_logs: true
+
+    data_quality_monitoring_alerting:
+      validation:
+        rules_required: true
+        schema_enforcement: true
+      monitoring:
+        dashboards: true
+        automated_alerts: true
+      profiling:
+        data_statistics: true
+        anomaly_detection: true
+      freshness_monitoring: true
+
+    implementation_deployment:
+      embedded_analytics: true
+      on_prem_or_not: ["Cloud", "Desktop"]
+      deployment_pipelines:
+        supported: conditional # Premium or Fabric 64+
+      CI_CD:
+        APIs: true
+
+    serving_consumption:
+      internal_sharing: true
+      external_sharing:
+        supported: true
+      automated_reports: true
+      export_formats: ["PDF", "Excel", "PowerPoint", "CSV", "Image formats"]
+
+    visualization:
+      out_of_the_box_features:
+        [
+          "Smart narratives (AI-generated text insights)",
+          "Q&A natural language query",
+          "AI-powered insights detection",
+          "Power Automate visual integration",
+          "Power Apps visual integration",
+          "Paginated reports",
+        ]
+      custom_visuals: "Medium (large marketplace, but quality varies. DAX offers a lot of flexibility, but can get complicated.)"
+
+    workflow_management:
+      approvals: false
+      versioning: "Medium (good Git integration with Premium/Fabric; limited in lower tiers)"
+      environments: "High (Development/test/production workspaces, deployment pipelines, Azure DevOps integration)"
+
+    tech_stack:
+      - Azure

@@ -1,0 +1,114 @@
+# =================================================================================================
+# PROJECT CONFIGURATION & DEPENDENCIES
+# =================================================================================================
+# Organization:
+# This file uses a "Split Dependency" strategy to optimize Docker image sizes:
+# 1. [project.dependencies]: Lightweight core libraries shared by ALL services (Main App + Relay).
+# 2. [project.optional-dependencies]: Heavy libraries isolated for specific services.
+#    - 'main': Includes PDF generation (WeasyPrint), NLP (Torch/Transformers), and logic.
+#    - 'cloud_function': Keeps the Relay service tiny.
+#
+# UV Optimization ([tool.uv]):
+# The `uv.index` and `uv.sources` sections explicitly force the installation of the
+# CPU-only version of PyTorch. This prevents downloading NVIDIA CUDA drivers, reducing the
+# Docker image size by approximately 1.5GB.
+# =================================================================================================
+
+[project]
+name = "xbi_advisor"
+version = "0.1.0"
+description = "Our lovely XBI project"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.13"
+
+# Core dependencies shared by both main app and relay
+dependencies = [
+    "requests>=2.32.4",
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "google-auth>=2.40.3",
+    "protobuf<4",
+    "google-cloud>=0.34.0",
+    "python-dotenv>=1.1.0",
+    "pyyaml>=6.0.2",
+]
+
+[project.optional-dependencies]
+# Development tools
+dev = [
+    "pytest>=9.0.3",
+    "ty>=0.0.35",
+    "pydantic>=2.11.7",
+    "pytest-cov>=7.1.0",
+    "pytest-asyncio>=1.3.0",
+]
+
+# Main application extras (heavy PDF, NLP, embeddings)
+main = [
+    "jinja2>=3.1.6",
+    "openai>=1.82.0",
+    "pydantic>=2.11.5",
+    "ruamel.yaml>=0.18.10",
+    "markdown>=3.5.1",
+    "google-cloud-storage>=3.2.0",
+    "sentence-transformers>=5.0.0",
+    "weasyprint>=67.0",
+    "reportlab>=4.0.0",
+    "scipy>=1.16.0",
+    "pypdf2>=3.0.1",
+    "pikepdf>=9.10.2",
+]
+
+# Credential-free demo (no cloud deps needed)
+demo = [
+    "sentence-transformers>=5.0.0",
+]
+
+# Relay function extras (lightweight)
+cloud_function = [
+    "google-auth-oauthlib>=1.2.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["xbi_advisor"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes (unused imports, undefined names)
+    "I",   # isort (import ordering)
+    "UP",  # pyupgrade (modernise syntax — Union → |, Optional → X | None, etc.)
+]
+ignore = [
+    "E501",  # line too long — ruff-format handles structural wrapping; string literals are left as-is
+]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"xbi_advisor/__main__.py" = ["E402"]  # logging.basicConfig must run before other module imports
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

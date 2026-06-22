@@ -1,0 +1,38 @@
+xebia_bi_services:
+  trainings:
+    - name: "Power BI in a Day"
+      url: "https://academy.xebia.com/training/power-bi-in-a-day/"
+    - name: "Power BI - Intermediate"
+      url: "https://academy.xebia.com/training/intermediate-power-bi/"
+    - name: "Power BI - Advanced"
+      url: "https://academy.xebia.com/us/training/advanced-power-bi-dax-and-data-modeling/"
+    - name: "Data Storytelling"
+      url: "https://academy.xebia.com/nl/training/data-visualization-and-storytelling/"
+    - name: "Power BI - Exam training"
+      url: "https://academy.xebia.com/training/microsoft-pl-300-exam/"
+    - name: "dbt Learn"
+      url: "https://academy.xebia.com/training/dbt-learn/"
+
+  coaching:
+    - "Looker training"
+    - "Coaching on Looker/Tableau/Qlik"
+
+  implementation_guidance_and_support:
+    - "Provide expert advice on architecture and tool selection"
+    - "Support in project planning and execution"
+    - "Offer hands-on assistance during rollouts and migrations"
+    - "Help troubleshoot and advice on BI solutions entire infrastructure"
+
+  conversational_analytics:
+    - "Design and develop virtual agents"
+
+  create_stakeholder_trust:
+    - "Establish data governance frameworks"
+    - "Implement data quality and lineage tracking"
+    - "Facilitate stakeholder engagement and training"
+    - "Promote clear communication of BI capabilities and limitations"
+    - "Improve data modelling for consistent KPIs"
+
+  performance_optimization:
+    - "Analyze and tune data pipelines and queries"
+    - "Optimize data models"

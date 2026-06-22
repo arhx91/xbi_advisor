@@ -1,0 +1,76 @@
+bi_tools:
+  - name: "Looker"
+    pros:
+      - "LookML coding language for powerful data modeling"
+      - "Strong version control and Git integration"
+      - "Excellent for embedded analytics"
+      - "Modern cloud-native architecture"
+      - "Reusable components reduce duplicated work"
+    cons:
+      - "Higher technical barrier to entry"
+      - "Development requires SQL knowledge"
+      - "Cloud-only deployment"
+      - "Higher cost for smaller organizations"
+    price:
+      user_licenses: "High (User- and data-volume based, flexible)"
+      data_usage_cost: "Included in data-volume-based pricing model"
+    security:
+      access_controls:
+        row_level_security: true
+        field_level_security: true
+        role_based_permissions: true
+      compliance_certifications:
+        - "GDPR"
+    tool_maturity: "High (modern tool with strong Google Cloud integration)"
+    data_governance:
+      centralized_semantic_layer: true
+      data_dictionary: true
+      metadata_management: true
+      data_lineage: true
+      audit_capabilities:
+        usage_tracking: true
+        change_history: true
+        access_logs: true
+    data_quality_monitoring_alerting:
+      validation:
+        rules_required: true
+        schema_enforcement: true
+      monitoring:
+        dashboards: true
+        automated_alerts: true
+      profiling:
+        data_statistics: true
+        anomaly_detection: true
+      freshness_monitoring: true
+    implementation_deployment:
+      embedded_analytics: true
+      on_prem_or_not: ["Cloud"]
+    serving_consumption:
+      automated_reports: true
+      export_formats:
+        [
+          "PDF",
+          "CSV",
+          "Excel",
+          "Google Sheets",
+          "JSON",
+          "HTML",
+          "Markdown",
+          "Text",
+        ]
+    visualization:
+      out_of_the_box_features:
+        [
+          "LookML data modeling language",
+          "Merged results from multiple queries",
+          "Persistent derived tables (PDTs)",
+          "Embedding customization options",
+          "Aggregate awareness optimization",
+          "Looker Actions",
+          "Custom visualizations with custom HTML",
+        ]
+      custom_visuals: "High"
+    workflow_management:
+      approvals: false
+      versioning: "High (Strong Git integration)"
+      environments: "High (Built-in dev/prod environments, instance-based separation, project import/export, LookML validation)"

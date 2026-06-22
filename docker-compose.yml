@@ -1,0 +1,31 @@
+# Docker Compose file for local development/testing.
+# Not used for deployment to Google Cloud Run.
+version: "3.8"
+
+services:
+  xbi-advisor:
+    build: .
+
+    # Add port mapping to make the service accessible from your Mac
+    ports:
+      - "8080:8080"
+
+    # Load local development environment variables
+    env_file:
+      - ./xbi_advisor/.env
+
+    # Mount local dirs so we can inspect scratch + final output after runs
+    volumes:
+      # Scratch space (simulates Cloud Run's /tmp)
+      - ./tmp:/tmp/xbi_advisor
+
+      # Persistent output (simulates Cloud Run's /mnt/gcs)
+      - ./gcs:/mnt/gcs
+
+    # Optionally override env vars for local dev to use mounted paths
+    environment:
+      TMP_DIR: /tmp/xbi_advisor
+      GCS_BUCKET_PATH: /mnt/gcs
+
+    # Entry point can be overridden for CLI jobs
+    command: ["--reload"]

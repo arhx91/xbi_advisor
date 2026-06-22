@@ -1,0 +1,36 @@
+respondent_id: example_respondent
+submitted_at: '2026-02-09T10:43:00Z'
+user_info:
+  name: Jane Doe
+  email: jane@example.com
+  organization_name: Jane Co
+ecosystem:
+  current_bi_tool: Tableau
+  platform:
+    - Microsoft Azure
+    - Google Cloud Platform (GCP)
+    - Amazon Web Services (AWS)
+  migration: Yes, we are exploring a potential migration
+security:
+  row_level_security: Yes, RLS is essential for our BI setup
+data_governance:
+  centralized_governance: Yes, centralized governance is a must
+  version_control: Somewhat, they would be helpful but aren't critical
+maturity_level:
+  team: No, but we have people doing similar tasks
+  decision_making: Moderately, BI supports decision-making but isn't fully
+    embedded in workflows
+  monitoring: We have basic monitoring only (can see if systems are up/down)
+  code_first_approach: We mostly use built-in drag-and-drop functionality
+    (10-25% code)
+  visuals: 'Somewhat important: We occasionally need interactive elements for specific
+    use cases'
+capabilities:
+  external_delivery: Very few of our dashboards/reports need external sharing
+    capabilities
+  report_delivery: Some of our reports require automated delivery/export
+  pain_points: "Currently on SAP, performance issues\nAccessibility, data management"
+pricing:
+  user_licensing: "Moderately important: Cost is considered, but it's balanced with
+    features and other factors"
+pain_points: {}

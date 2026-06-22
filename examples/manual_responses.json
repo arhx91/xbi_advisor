@@ -1,0 +1,32 @@
+[
+  {
+    "response_id": "manual_example",
+    "submitted_at": "2026-02-09T10:43:00Z",
+    "answers": {
+      "What is your name?": "Jane Doe",
+      "What is your email address?": "jane@example.com",
+      "What is the name of your organization?": "Jane Co",
+      "Are you already using a BI tool? If so, which one?": "Tableau",
+      "What cloud platform(s) or other tools is your organization currently using?": [
+        "Microsoft Azure",
+        "Google Cloud Platform (GCP)",
+        "Amazon Web Services (AWS)"
+      ],
+      "Are you actively migrating to a new system/platform, or are you exploring a potential migration?": "Yes, we are exploring a potential migration",
+      "Do you require row-level security (RLS) to control data visibility by user role, team, or region?": "Yes, RLS is essential for our BI setup",
+      "Do you have centralized data governance—including shared metrics, access control, and a semantic model reused across teams?": "Yes, centralized governance is a must",
+      "Do you need to be able to track changes made in your development workflow (version control)?": "Somewhat, they would be helpful but aren't critical",
+      "How would you describe your team’s data literacy?": "Advanced: Team members are comfortable working with data, can perform basic analysis, and understand key statistical concepts",
+      "Does your team include an Analytics Engineer?": "No, but we have people doing similar tasks",
+      "To what extent are BI insights leveraged for business decisions?": "Moderately, BI supports decision-making but isn't fully embedded in workflows",
+      "How important is the cost associated with the BI tool for you?": "Moderately important: Cost is considered, but it's balanced with features and other factors",
+      "Which of the following monitoring capabilities do you currently have in place for your BI systems?": "We have basic monitoring only (can see if systems are up/down)",
+      "How much do you rely on writing code or expressions (e.g. DAX, LookML, SQL) versus using drag-and-drop features when building BI reports and dashboards?": "We mostly use built-in drag-and-drop functionality (10-25% code)",
+      "Our BI tooling needs to be the best-in-class and be able to create interactive and animated visualizations.": "Somewhat important: We occasionally need interactive elements for specific use cases",
+      "Our BI tooling needs to be able to share dashboards and reports externally (e.g., with clients or partners).": "Very few of our dashboards/reports need external sharing capabilities",
+      "Our BI tooling needs to automate delivery of reports via email or export them to formats like PDF or Excel.": "Some of our reports require automated delivery/export",
+      "What are some pain points you experience with your current BI setup?": "Currently on SAP, performance issues\nAccessibility, data management",
+      "What’s most important in your BI tool selection?": "Ease of use balanced with total cost of ownership"
+    }
+  }
+]
