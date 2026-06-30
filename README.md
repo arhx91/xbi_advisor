@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
 ![Cloud Run](https://img.shields.io/badge/deployed-Cloud%20Run-4285F4.svg)
 
-> Rules first, LLMs last — a production pattern for reliable AI recommendations.
+> Rules first, LLMs last  a production pattern for reliable AI recommendations.
 
 LLMs are fluent. They are not reliable. Asking an LLM to diagnose a complex setup gives you answers that vary run-to-run, are too vague to act on, and can't be audited. This project fixes that with a two-layer advisory engine where deterministic rules do the thinking and the LLM does the talking.
 
